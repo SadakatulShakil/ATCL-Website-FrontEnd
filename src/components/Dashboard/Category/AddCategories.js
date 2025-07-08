@@ -12,7 +12,7 @@ const AddCategories = () => {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        "https://atcl-website-backend.onrender.com//api/categories/add-category",
+        "https://atcl-website-backend.onrender.com/api/categories/add-category",
         data
       );
       toast.success(res.data.message);

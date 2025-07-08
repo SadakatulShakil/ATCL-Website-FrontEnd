@@ -19,7 +19,7 @@ const AddTeamMember = () => {
       formData.append("file", data.file[0]);
 
       const response = await axios.post(
-        "https://atcl-website-backend.onrender.com//api/team/add",
+        "https://atcl-website-backend.onrender.com/api/team/add",
         formData,
         {
           headers: {

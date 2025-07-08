@@ -28,7 +28,7 @@ const Login = () => {
     e.preventDefault(); // Prevent page reload
     try {
       const res = await axios.post(
-        "https://atcl-website-backend.onrender.com//api/auth/register",
+        "https://atcl-website-backend.onrender.com/api/auth/register",
         userData
       );
       alert(res.data.message);
@@ -51,7 +51,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://atcl-website-backend.onrender.com//api/auth/login",
+        "https://atcl-website-backend.onrender.com/api/auth/login",
         formData
       );
 

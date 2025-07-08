@@ -17,7 +17,7 @@ const AddServices = () => {
       formData.append("servicedescription", data.servicedescription);
       formData.append("file", data.file[0]); // Assuming "file" is the name of the file input
 
-      const response = await fetch("https://atcl-website-backend.onrender.com//api/services", {
+      const response = await fetch("https://atcl-website-backend.onrender.com/api/services", {
         method: "POST",
         body: formData,
       });

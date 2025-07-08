@@ -61,7 +61,7 @@ const TeamSlider = () => {
             <div className="bg-white rounded-2xl shadow-md text-center p-4">
               <div className="mb-4">
                 <img
-                  src={`https://atcl-website-backend.onrender.com//${member.image}`}
+                  src={`https://atcl-website-backend.onrender.com/${member.image}`}
                   alt={member.name}
                   className="w-full h-72 object-cover rounded-xl"
                 />

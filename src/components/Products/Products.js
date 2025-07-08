@@ -6,7 +6,7 @@ const Products = () => {
   const [categories, setCategories] = useState([]);
 
   const fetchServices = () => {
-    axios.get("https://atcl-website-backend.onrender.com//api/categories/all")
+    axios.get("https://atcl-website-backend.onrender.com/api/categories/all")
       .then(res => {
         console.log("Fetched categories:", res.data);
         setCategories(res.data);

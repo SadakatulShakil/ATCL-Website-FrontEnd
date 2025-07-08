@@ -9,7 +9,7 @@ const ManageCategories = () => {
   // Fetch services
   const fetchServices = () => {
     axios
-      .get("https://atcl-website-backend.onrender.com//api/categories/all")
+      .get("https://atcl-website-backend.onrender.com/api/categories/all")
       .then((res) => setCategories(res.data))
       .catch((err) => {
         console.error("Fetch error:", err);
@@ -24,7 +24,7 @@ const ManageCategories = () => {
 
     try {
       setLoadingId(id);
-      await axios.delete(`https://atcl-website-backend.onrender.com//api/categories/${id}`);
+      await axios.delete(`https://atcl-website-backend.onrender.com/api/categories/${id}`);
       setCategories((prev) => prev.filter((category) => category._id !== id));
       toast.success("Categories deleted successfully.");
     } catch (err) {

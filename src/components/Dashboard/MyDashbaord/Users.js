@@ -16,7 +16,7 @@ const Users = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://atcl-website-backend.onrender.com//api/admin/users-login",
+        "https://atcl-website-backend.onrender.com/api/admin/users-login",
         formData
       );
 
