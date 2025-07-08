@@ -11,7 +11,7 @@ const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await axios.get("http://localhost:5050/api/news/all");
+        const res = await axios.get("https://atcl-website-backend.onrender.com//api/news/all");
         setNewsList(res.data);
         setLoading(false);
       } catch (error) {
@@ -64,7 +64,7 @@ const News = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
               <div className="relative">
                 <img
-                  src={`http://localhost:5050/${item.image}`}
+                  src={`https://atcl-website-backend.onrender.com//${item.image}`}
                   alt=""
                   className="w-full h-56 object-cover"
                 />

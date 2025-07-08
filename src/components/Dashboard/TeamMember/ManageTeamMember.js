@@ -9,7 +9,7 @@ const ManageTeamMember = () => {
   // Fetch services
   const fetchServices = () => {
     axios
-      .get("http://localhost:5050/api/team/all")
+      .get("https://atcl-website-backend.onrender.com//api/team/all")
       .then((res) => setTeams(res.data))
       .catch((err) => {
         console.error("Fetch error:", err);
@@ -24,7 +24,7 @@ const ManageTeamMember = () => {
 
     try {
       setLoadingId(id);
-      await axios.delete(`http://localhost:5050/api/team/${id}`);
+      await axios.delete(`https://atcl-website-backend.onrender.com//api/team/${id}`);
       setTeams((prev) => prev.filter((team) => team._id !== id));
       toast.success("Team Menber deleted successfully.");
     } catch (err) {
@@ -60,7 +60,7 @@ const ManageTeamMember = () => {
                 <td>{team.memberdesignation}</td>
                 <td>
                   <img
-                    src={`http://localhost:5050/${team.image}`}
+                    src={`https://atcl-website-backend.onrender.com//${team.image}`}
                     alt="Service"
                     className="w-16 h-16 object-cover"
                   />
