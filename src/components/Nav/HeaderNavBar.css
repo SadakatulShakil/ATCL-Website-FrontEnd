@@ -1,0 +1,17 @@
+.dropdown-menu.open {
+  display: block;
+  animation: fadeIn 0.2s;
+}
+@media (max-width: 900px) {
+  .dropdown-menu,
+  .dropdown-menu.right {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 0;
+    background: #37474f;
+    left: unset;
+    top: unset;
+    margin-left: 0;
+  }
+}

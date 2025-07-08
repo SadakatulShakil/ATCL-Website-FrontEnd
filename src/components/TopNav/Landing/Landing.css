@@ -1,0 +1,148 @@
+.full-width-slider {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.slider-slide {
+  height: 100vh;
+  /* background-size: cover;
+     background-position: center; */
+}
+
+.slide-content {
+  /* position: absolute;
+     top: 50%;
+     left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  color: #fff;
+  /* text-align: center; */
+}
+
+/* .slick-prev:before,
+   .slick-next:before {
+     color: rgb(29, 7, 94);
+   } */
+
+.landingone {
+  background-image: linear-gradient(
+      to left,
+      rgba(49, 16, 234, 0.01),
+      rgba(0, 9, 10, 0.9)
+    ),
+    url("../../../assets//banner1.jpg");
+  width: 100%;
+  height: 100vh;
+
+  background-size: contain;
+  background-size: cover;
+
+  background-size: 100% 100%;
+
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 393px) {
+  .landingone {
+    width: 100%;
+    background-image: linear-gradient(
+        to left,
+        rgba(49, 16, 234, 0.01),
+        rgba(0, 9, 10, 0.9)
+      ),
+      url("../../../assets/banner1.jpg");
+    height: 30vh;
+
+    background-size: contain;
+    background-size: cover;
+
+    background-size: 100% 100%;
+
+    background-repeat: no-repeat;
+  }
+}
+
+.landingtwo {
+  background-image: linear-gradient(
+      to left,
+      rgba(2, 1, 9, 0.01),
+      rgba(3, 3, 3, 0.9)
+    ),
+    url("../../../assets//banner2.jpg");
+  /* background-repeat: no-repeat;
+         background-size: cover; */
+  height: auto;
+  width: 100%;
+  /* background-size: contain; */
+  background-size: cover;
+
+  background-size: 100% 85%;
+
+  background-repeat: no-repeat;
+}
+.landingthree {
+  background-image: linear-gradient(
+      to left,
+      rgba(193, 212, 192, 0.01),
+      rgba(9, 27, 29, 0.9)
+    ),
+    url("../../../assets//banner3.jpg");
+ 
+  height: auto;
+  width: 100%;
+ 
+  background-size: cover;
+
+  background-size: 100% 85%;
+
+  background-repeat: no-repeat;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-text {
+  opacity: 0;
+}
+
+.animated {
+  opacity: 1;
+
+  animation: fade-in 1s ease-in-out;
+
+  animation-duration: 1s;
+}
+/*  */
+
+/* new both side animation */
+.animatedpic {
+  opacity: 1;
+
+  animation: bounce-in-right 2s ease;
+
+  animation-duration: 1s;
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
