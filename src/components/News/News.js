@@ -49,13 +49,12 @@ const News = () => {
   return (
     <div className="full-width-slider  py-8 px-2 bg-white">
       <div className=" ">
-        <h1 className="text-3xl text-center text-[#2C234D]  font-bold poppins-b sm:text-4xl py-2">
-          Our News
+        <h1 className="text-3xl text-center text-blue-600  font-bold poppins-b sm:text-4xl py-2">
+          Case Study
         </h1>
-
-        {/* <p className=" lg:text-xl text-center text-[#E0581E] font-semibold   sm:text-4xl py-2">
-          Our Recent News
-        </p> */}
+        <p className=" lg:text-lg text-center text-black font-semibold   sm:text-4xl py-2">
+          Here is Our some recent Case Study
+        </p>
       </div>
 
       <Slider {...settings}>

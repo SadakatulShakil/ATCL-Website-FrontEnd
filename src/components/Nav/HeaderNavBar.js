@@ -11,7 +11,7 @@ export default function HeaderNavBar() {
           <div className="flex-shrink-0">
             <a href="https://atcbd.net/">
               <img
-                src="https://atcbd.net//public/images/ATCL_Logo5.png"
+                src="https://atcbd.net//public/images/brand_logo.png"
                 alt="ATCL Logo"
                 className="h-12 w-auto"
               />

@@ -30,11 +30,11 @@ const Products = () => {
   return (
     <div className="bg-gray-50">
       <div className=" ">
-        <h1 className="text-3xl text-center text-[#2C234D]  font-bold poppins-b sm:text-4xl py-2">
+        <h1 className="text-3xl text-center text-blue-600  font-bold poppins-b sm:text-4xl py-2">
           Our Products
         </h1>
 
-        <p className=" lg:text-xl text-center text-[#E0581E] font-semibold   sm:text-4xl py-2">
+        <p className=" lg:text-lg text-center text-black font-semibold   sm:text-4xl py-2">
           WHAT TYPE OF PRODUCT WE CAN OFFER YOU
         </p>
       </div>
@@ -45,7 +45,7 @@ const Products = () => {
             <button
               key={category._id}
               // onClick={() => handleCategoryClick(category._id)}
-              className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md mb-1"
+              className="bg-blue-400 hover:bg-blue-500 text-white hover:text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-105"
             >
               {category.categoryname}
             </button>

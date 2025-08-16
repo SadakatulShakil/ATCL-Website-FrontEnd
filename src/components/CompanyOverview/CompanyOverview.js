@@ -10,8 +10,8 @@ const CompanyOverview = () => {
     <div class="w-full lg:w-1/2">
       <div class="mb-8 lg:mb-0">
         <div class="mb-4">
-          <span class="text-[#E0581E] font-medium text-sm uppercase tracking-wider">Company Overview</span>
-          <h4 class="text-2xl md:text-3xl font-bold text-gray-800 mt-2">We Are Here To Serve You</h4>
+          <span class="text-blue-600 font-medium text-sm uppercase tracking-wider">Survey Instruments BD</span>
+          <h4 class="text-2xl md:text-3xl font-bold text-gray-800 mt-2">Where Accuracy Begins</h4>
         </div>
         <p class="text-gray-600 text-base leading-relaxed mb-6">
           Established in 1999 with a group of professionals, ATCL (Advance 
@@ -26,7 +26,7 @@ const CompanyOverview = () => {
           Universities; Testing &amp; Manufacturing Equipments &amp; Machineries 
           for Manufacturing Industries and Land Survey…
         </p>
-        <a href="https://atcbd.net/aboutus" class="inline-block  bg-[#E0581E] text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">See Details</a>
+        <a href="https://atcbd.net/aboutus" class="inline-block  bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">See Details</a>
       </div>
     </div>
 

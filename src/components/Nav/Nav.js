@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import atch from "../../assets/ATCL_Logo5.png";
+import atch from "../../assets/brand_logo.png";
 import { toast } from "react-toastify";
 
 // Utility to detect and close dropdowns on outside click
@@ -52,9 +52,9 @@ const Nav = () => {
     toast.success("Logged out successfully");
     navigate("/users-login");
   };
-
+ 
   const active =
-    "text-white mx-1 font-medium border-b-2 border-white-900 pb-1 transition bg-[#F15F22] hover:bg-opacity-40 active:bg-[#F15F22] shadow-md rounded-md px-2";
+    "text-white mx-1 font-medium border-b-2 border-white-900 pb-1 transition bg-[#1466C6] hover:bg-opacity-40 active:bg-[#F15F22] shadow-md rounded-md px-2";
   const normal =
     "mx-1 text-white-600 font-medium font-bold focus:text-white p-0 lg:text-black";
 
@@ -88,14 +88,14 @@ const Nav = () => {
         </svg>
       </button>
       <ul
-        className={`absolute left-0 z-20 mt-2 w-40 rounded-md bg-gradient-to-r from-[#92468E] to-[#38235D] shadow-lg py-2 text-sm ${
+        className={`absolute left-0 z-20 mt-2 w-40 rounded-md bg-gradient-to-r from-[#1455c6] to-[#1466C6] shadow-lg py-2 text-sm ${
           openDropdown === "service" ? "block" : "hidden"
         }`}
       >
         <li>
           <NavLink
             to="/service1"
-            className="block px-4 py-2 text-white hover:bg-yellow-500 hover:text-black transition"
+            className="block px-4 py-2 text-white hover:bg-white hover:text-black transition"
             onClick={() => setOpenDropdown("")}
           >
             Service 1
@@ -104,7 +104,7 @@ const Nav = () => {
         <li>
           <NavLink
             to="/service2"
-            className="block px-4 py-2 text-white hover:bg-yellow-500 hover:text-black transition"
+            className="block px-4 py-2 text-white hover:bg-white hover:text-black transition"
             onClick={() => setOpenDropdown("")}
           >
             Service 2
@@ -145,13 +145,13 @@ const Nav = () => {
         </svg>
       </button>
       <ul
-        className={`absolute left-0 z-30 mt-2 w-48 rounded-md bg-gradient-to-r from-[#92468E] to-[#38235D] shadow-lg py-2 text-sm ${
+        className={`absolute left-0 z-30 mt-2 w-48 rounded-md bg-gradient-to-r from-[#1455c6] to-[#1455c6] shadow-lg py-2 text-sm ${
           openDropdown === "product" ? "block" : "hidden"
         }`}
       >
         <li className="relative">
           <button
-            className="flex items-center justify-between w-full px-4 py-2 text-white hover:bg-yellow-500 hover:text-black transition"
+            className="flex items-center justify-between w-full px-4 py-2 text-white hover:bg-white hover:text-black transition"
             onClick={() =>
               setOpenSubDropdown(
                 openSubDropdown === "product1" ? "" : "product1"
@@ -277,9 +277,9 @@ const Nav = () => {
       {!isLoggedAdminIn ? (
         <li className="nav-item p-2">
           
-          <NavLink to="/users-login" className={({ isActive }) => (isActive ? active : normal)}>
+          {/* <NavLink to="/users-login" className={({ isActive }) => (isActive ? active : normal)}>
             User Login
-          </NavLink>
+          </NavLink> */}
         </li>
         
       ) : (
@@ -536,7 +536,7 @@ const Nav = () => {
       )}
       <li className="pt-4">
         <a
-          className="flex items-center gap-2 rounded-xl bg-[#F15F22] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className="flex items-center gap-2 rounded-xl bg-[#1466C6] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  "
           href="/"
         >
           Get A Quote
@@ -566,7 +566,7 @@ const Nav = () => {
               <ul className="flex items-center gap-1">{desktopNavItem}</ul>
               <div className="ml-4">
                 <a
-                  className="flex items-center gap-2 rounded-xl bg-[#F15F22] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  className="flex items-center gap-2 rounded-xl bg-[#1466C6] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                   href="/"
                 >
                   Get A Quote

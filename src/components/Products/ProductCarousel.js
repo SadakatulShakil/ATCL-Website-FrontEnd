@@ -108,7 +108,7 @@ const ProductCarousel = () => {
                 <div className="mt-4">
                   <a
                     href={product.link}
-                    className="inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-200 text-sm font-semibold"
+                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-200 text-sm font-semibold"
                   >
                     View Details
                   </a>
