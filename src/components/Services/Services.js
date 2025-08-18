@@ -32,6 +32,7 @@ const Services = () => {
           WHAT SERVICE WE CAN OFFER YOU
         </p>
       </div>
+      <div className="container mx-auto px-8">
       <div className="flex flex-col md:flex-row flex-wrap">
         {services.map((service) => (
           <div key={service._id} className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -60,6 +61,7 @@ const Services = () => {
           </div>
         ))}
       </div>
+        </div>
     </div>
   );
 };

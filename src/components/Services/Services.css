@@ -1,12 +1,15 @@
 .custom-card {
   border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 50px 15px;
-  transition: all 0.4s ease-out 0s;
+  border-radius: 12px;
+  padding: 40px 20px;
+  transition: all 0.4s ease-in-out;
   position: relative;
   z-index: 1;
   height: 450px;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
 .custom-card::before {
@@ -18,13 +21,41 @@
   height: 0%;
   background: linear-gradient(135deg, #4178ee, #6c63ff);
   z-index: -1;
-  transition: height 0.4s ease-out;
+  transition: height 0.5s ease;
+  border-radius: 12px;
 }
 
 .custom-card:hover::before {
   height: 100%;
 }
 
+.custom-card img {
+  transition: transform 0.4s ease;
+}
+
+.custom-card:hover img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.custom-card h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+}
+
+.custom-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: color 0.4s ease;
+}
+
+.custom-card:hover h5,
+.custom-card:hover p {
+  color: #fff;
+}
+
 .custom-card:hover {
-  color: white;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }

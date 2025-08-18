@@ -1,124 +1,109 @@
-import React from 'react';
-import { FaCog } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaCog, FaUsers, FaBox, FaNewspaper, FaStar } from "react-icons/fa";
 
-const MyDashbaord = () => {
-     return (
-          <div>
-               <div className="p-4">
+const MyDashboard = () => {
+  const [showAlert, setShowAlert] = useState(true);
 
-      {/* Breadcrumb Section */}
-      <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-4 gap-2">
-        <div>
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-        </div>
-        <div>
-          <div className="breadcrumbs text-sm">
-            <ul>
-              <li className="text-gray-500 font-medium">Dashboard</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  // Auto hide alert after 5s
+  useEffect(() => {
+    const timer = setTimeout(() => setShowAlert(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
-      {/* Success Alert */}
-      <div className="alert alert-success shadow-lg mb-6">
-        <div>
-          <span className="badge badge-success text-white">Success</span>
-          <span>WELCOME .</span>
-        </div>
-        <button className="btn btn-sm btn-circle btn-ghost" onClick={() => document.querySelector('.alert')?.remove()}>
-          ✕
-        </button>
-      </div>
-
-      {/* Statistic Card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="card bg-primary text-primary-content shadow-lg">
-          <div className="card-body relative">
-            
-            {/* Dropdown */}
-            <div className="absolute top-4 right-4">
-              <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-sm btn-circle bg-transparent hover:bg-base-200 border-none text-white">
-                  <FaCog />
-                </label>
-                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 text-gray-700 rounded-box w-40">
-                  <li><a>Action</a></li>
-                  <li><a>Another action</a></li>
-                  <li><a>Something else</a></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card Content */}
-            <h4 className="text-3xl font-bold">10,468</h4>
-            <p className="text-white text-opacity-90">Members online</p>
-
-            {/* Chart Placeholder */}
-            <div className="mt-4 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center text-sm text-white">
-              Chart Placeholder
-            </div>
-          </div>
-        </div>
-        <div className="card bg-primary text-primary-content shadow-lg">
-          <div className="card-body relative">
-            
-            {/* Dropdown */}
-            <div className="absolute top-4 right-4">
-              <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-sm btn-circle bg-transparent hover:bg-base-200 border-none text-white">
-                  <FaCog />
-                </label>
-                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 text-gray-700 rounded-box w-40">
-                  <li><a>Action</a></li>
-                  <li><a>Another action</a></li>
-                  <li><a>Something else</a></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card Content */}
-            <h4 className="text-3xl font-bold">10,468</h4>
-            <p className="text-white text-opacity-90">Members online</p>
-
-            {/* Chart Placeholder */}
-            <div className="mt-4 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center text-sm text-white">
-              Chart Placeholder
-            </div>
-          </div>
-        </div>
-        <div className="card bg-primary text-primary-content shadow-lg">
-          <div className="card-body relative">
-            
-            {/* Dropdown */}
-            <div className="absolute top-4 right-4">
-              <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-sm btn-circle bg-transparent hover:bg-base-200 border-none text-white">
-                  <FaCog />
-                </label>
-                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 text-gray-700 rounded-box w-40">
-                  <li><a>Action</a></li>
-                  <li><a>Another action</a></li>
-                  <li><a>Something else</a></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card Content */}
-            <h4 className="text-3xl font-bold">10,468</h4>
-            <p className="text-white text-opacity-90">Members online</p>
-
-            {/* Chart Placeholder */}
-            <div className="mt-4 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center text-sm text-white">
-              Chart Placeholder
-            </div>
-          </div>
+  return (
+    <div className="p-6">
+      {/* Header / Breadcrumb */}
+      <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-6 gap-2">
+        <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
+        <div className="breadcrumbs text-sm">
+          <ul>
+            <li className="text-gray-500 font-medium">Dashboard</li>
+          </ul>
         </div>
       </div>
 
+      {/* Welcome Alert */}
+      {showAlert && (
+        <div className="alert bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg mb-8 rounded-lg">
+          <div className="flex items-center gap-2">
+            <span className="badge bg-white text-green-600 border-none">Success</span>
+            <span>WELCOME 🚀</span>
+          </div>
+          <button
+            className="btn btn-sm btn-circle btn-ghost text-white"
+            onClick={() => setShowAlert(false)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* Stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard
+          icon={<FaUsers size={28} />}
+          value="10,468"
+          label="Members Online"
+          color="from-blue-500 to-blue-600"
+        />
+        <StatCard
+          icon={<FaBox size={28} />}
+          value="2,345"
+          label="Products Sold"
+          color="from-purple-500 to-purple-600"
+        />
+        <StatCard
+          icon={<FaNewspaper size={28} />}
+          value="1,245"
+          label="News Published"
+          color="from-pink-500 to-pink-600"
+        />
+        <StatCard
+          icon={<FaStar size={28} />}
+          value="4.9"
+          label="Average Reviews"
+          color="from-indigo-400 to-indigo-600"
+        />
+      </div>
     </div>
-          </div>
-     );
+  );
 };
 
-export default MyDashbaord;
+const StatCard = ({ icon, value, label, color }) => (
+  <div
+    className={`card bg-gradient-to-r ${color} shadow-xl text-white rounded-2xl`}
+  >
+    <div className="card-body relative">
+      {/* Dropdown */}
+      <div className="absolute top-4 right-4">
+        <div className="dropdown dropdown-end">
+          <label
+            tabIndex={0}
+            className="btn btn-sm btn-circle bg-white/20 hover:bg-white/30 border-none text-white"
+          >
+            <FaCog />
+          </label>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu p-2 shadow bg-white text-gray-700 rounded-box w-40"
+          >
+            <li><button>Action</button></li>
+            <li><button>Another action</button></li>
+            <li><button>Something else</button></li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Card Content */}
+      <div className="flex items-center gap-4">
+        <div className="p-3 bg-white/20 rounded-full">{icon}</div>
+        <div>
+          <h4 className="text-3xl font-bold">{value}</h4>
+          <p className="text-white text-opacity-90">{label}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default MyDashboard;

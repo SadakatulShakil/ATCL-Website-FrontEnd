@@ -1,119 +1,91 @@
-import React, { useState } from 'react';
-import {
-  FaBars, FaTimes, FaUserCircle, FaSignOutAlt, FaChevronDown
-} from 'react-icons/fa';
-import { Link, Outlet } from 'react-router-dom';
+import React from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+
 const Dashboard = () => {
+  const location = useLocation();
 
- 
+  const menuItems = [
+    {
+      title: "Services",
+      links: [
+        { label: "Add Services", to: "/dashboard/add-services" },
+        { label: "Manage Services", to: "/dashboard/manage-services" },
+      ],
+    },
+    {
+      title: "Product Category",
+      links: [
+        { label: "Add Category", to: "/dashboard/add-product" },
+        { label: "Manage Category", to: "/dashboard/manage-category" },
+      ],
+    },
+    {
+      title: "Team Member",
+      links: [
+        { label: "Add Team Member", to: "/dashboard/add-team-member" },
+        { label: "Manage Team Member", to: "/dashboard/manage-team-member" },
+      ],
+    },
+    {
+      title: "News",
+      links: [
+        { label: "Add News", to: "/dashboard/add-news" },
+        { label: "Manage News", to: "/dashboard/manage-news" },
+      ],
+    },
+    {
+      title: "Review",
+      links: [
+        { label: "Add Review", to: "/dashboard/add-review" },
+        { label: "Manage Review", to: "/dashboard/manage-review" },
+      ],
+    },
+  ];
 
-     return (
-     <div className="drawer lg:drawer-open">
+  return (
+    <div className="drawer lg:drawer-open">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content  text-lg text-white ">
-        {/* Page content here */}
-        {/* <h1 className='text-red-900 text-5xl'> Dasboard</h1> */}
-        <Outlet></Outlet>
+      <div className="drawer-content bg-gray-50 min-h-screen p-4">
+        <Outlet />
       </div>
-      <div className="drawer-side border-4    rounded-xl  ">
-        <label
-          htmlFor="dashboard-sidebar"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu p-4 w-52 min-h-full    bg-gradient-to-r from-[#e87c4e] via-[#F15F22] to-[#df571d]    text-lg text-white ">
-          {/* Sidebar content here */}
-          <li>
+
+      {/* Sidebar */}
+      <div className="drawer-side">
+        <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
+        <ul className="menu p-4 w-64 min-h-full bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-white">
+          <li className="mb-6 text-2xl font-bold tracking-wide">
             <Link to="/dashboard">My Dashboard</Link>
           </li>
-          
 
-          {/* <!-- Agrega más enlaces para la navegación lateral --> */}
-
-          <li>
-            <details class="mb-2">
-              <summary class=" p-3 rounded-lg cursor-pointer shadow">
-                <span class="font-semibold text-white">SERVICES</span>
-              </summary>
-              <div class="  p-1">
-                {/* <p class="text-white">Add Doctor</p> */}
-                <li><Link to="/dashboard/add-services">Add Services</Link></li>
-              </div>
-              <div class="  p-1">
-                <li>
-                  <Link to="/dashboard/manage-services">Manage Services</Link>
-                </li>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="mb-2">
-              <summary class=" p-3 rounded-lg cursor-pointer shadow">
-                <span class="font-semibold text-white">Product Category</span>
-              </summary>
-              <div class="  p-1">
-                {/* <p class="text-white">Add Doctor</p> */}
-                <li><Link to="/dashboard/add-product">Add Category</Link></li>
-              </div>
-              <div class="  p-1">
-                <li>
-                  <Link to="/dashboard/manage-category">Manage Category</Link>
-                </li>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="mb-2">
-              <summary class=" p-3 rounded-lg cursor-pointer shadow">
-                <span class="font-semibold text-white">Team Member </span>
-              </summary>
-              <div class="  p-1">
-                {/* <p class="text-white">Add Doctor</p> */}
-                <li><Link to="/dashboard/add-team-member">Add Team Member  </Link></li>
-              </div>
-              <div class="  p-1">
-                <li>
-                  <Link to="/dashboard/manage-team-member">Manage Team Member</Link>
-                </li>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="mb-2">
-              <summary class=" p-3 rounded-lg cursor-pointer shadow">
-                <span class="font-semibold text-white">News</span>
-              </summary>
-              <div class="  p-1">
-                 <li><Link to="/dashboard/add-news">Add News</Link></li>
-              </div>
-              <div class="  p-1">
-                <li>
-                  <Link to="/dashboard/manage-news">Manage News</Link>
-                </li>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="mb-2">
-              <summary class=" p-3 rounded-lg cursor-pointer shadow">
-                <span class="font-semibold text-white">Review</span>
-              </summary>
-              <div class="  p-1">
-                {/* <p class="text-white">Add Doctor</p> */}
-                <li><Link to="/dashboard/add-review">Add Review</Link></li>
-              </div>
-              <div class="  p-1">
-                <li>
-                  <Link to="/dashboard/manage-review">Manage Review</Link>
-                </li>
-              </div>
-            </details>
-          </li>
-          
+          {menuItems.map((menu, i) => (
+            <li key={i} className="mb-2">
+              <details>
+                <summary className="p-3 rounded-lg cursor-pointer shadow hover:bg-white/10">
+                  <span className="font-semibold">{menu.title}</span>
+                </summary>
+                <div className="ml-3">
+                  {menu.links.map((link, idx) => (
+                    <li key={idx}>
+                      <Link
+                        to={link.to}
+                        className={`block px-2 py-1 rounded-md transition ${
+                          location.pathname === link.to
+                            ? "bg-white/20 font-semibold"
+                            : "hover:bg-white/10"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </div>
+              </details>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
-     );
+  );
 };
 
 export default Dashboard;

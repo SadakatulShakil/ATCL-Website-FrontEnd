@@ -1,5 +1,5 @@
 import React from 'react';
-
+import atch from "../../assets/brand_logo.png";
 const Footer = () => {
 
 
@@ -88,8 +88,7 @@ const socialLinks = [
           <div className="flex items-center mb-4 md:mb-0">
             <a href="https://atcbd.net/">
               <img
-                src="https://atcbd.net//public/images/Untitled-31.png"
-                alt="ATCL Logo"
+                src={atch} alt="ATCL Logo"
                 className="h-12 w-auto"
               />
             </a>
